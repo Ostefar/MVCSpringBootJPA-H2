@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form action="/CreateMovie" th:object="${Movie}" method="post">
+        <p>Enter title</p>
+        <input type="text" name="movie_title">
+        <p>Enter releases year</p>
+        <input type="Date" name="movie_year">
+        <p>Enter category</p>
+        <input type="number" name="movie_category">
+        <br>
+        <br>
+        <input type="submit" value="Create Movie" >
+    </form>
+</div>
+</body>
+</html>
