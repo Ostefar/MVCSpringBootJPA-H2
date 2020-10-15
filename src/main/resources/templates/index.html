@@ -8,7 +8,21 @@
 
 <div>
 
+    <table>
+        <thead>
+        <tr>
+            <th>title</th>
+            <th>year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="movies: ${movie}">
+            <td th:text="${movies.title}"></td>
+            <td th:text="${movies.year}"></td>
+        </tr>
+        </tbody>
 
+    </table>
 
 </div>
 
