@@ -11,10 +11,9 @@ public class Movie {
 
     private String title;
     private String year;
-    private String category;
 
     @ManyToOne
-   Producer producer;
+    private Producer producer;
 
     @ManyToMany
     private Set<Category> categories;
@@ -49,14 +48,6 @@ public class Movie {
 
     public void setYear(String year) {
         this.year = year;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String genre) {
-        this.category = genre;
     }
 
     public Producer getProducer() {

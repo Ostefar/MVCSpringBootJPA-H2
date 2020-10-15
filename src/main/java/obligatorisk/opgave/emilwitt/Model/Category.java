@@ -12,8 +12,8 @@ public class Category {
 
     private String description;
 
-    @ManyToMany
-    Set<Movie> movies;
+    @ManyToMany(mappedBy = "categories")
+    private Set<Movie> movies;
 
     public Long getId() {
         return id;

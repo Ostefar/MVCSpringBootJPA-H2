@@ -15,7 +15,6 @@ public class Producer {
 
     private String first_name;
     private String last_name;
-    private String producer;
 
     @OneToMany(mappedBy = "producer")
     List<Movie> movies;
@@ -42,14 +41,6 @@ public class Producer {
 
     public void setLast_name(String last_name) {
         this.last_name = last_name;
-    }
-
-    public String getProducer() {
-        return producer;
-    }
-
-    public void setProducer(String producer) {
-        this.producer = producer;
     }
 
     public List<Movie> getMovies() {

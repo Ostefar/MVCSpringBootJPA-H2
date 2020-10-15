@@ -5,26 +5,30 @@ import obligatorisk.opgave.emilwitt.Repository.MovieRepository;
 import obligatorisk.opgave.emilwitt.Repository.ProducerRepository;
 import obligatorisk.opgave.emilwitt.Service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@org.springframework.stereotype.Controller
-public class Controller {
+import java.util.Optional;
+
+@Controller
+public class HomeController {
+
     @Autowired
     ProducerRepository producerRepository;
     MovieRepository movieRepository;
     MovieService movieService;
 
-    @GetMapping("/index")
-    public String index(Model model) {
-        Iterable<Movie> movieList = movieRepository.findAll();
-        model.addAttribute("movies", movieList);
+    @GetMapping("/")
+    public String index() {
+       /* Optional<Movie> x = movieRepository.findById((long) 1);
+        System.out.println(x.get().getTitle());*/
         return "index";
     }
 
-
+/*
     @GetMapping("/fillDB")
     public String fillDB(Model model){
         Movie obj = new Movie();
@@ -37,5 +41,5 @@ public class Controller {
         movieService.save(m);
         System.out.println("success");
         return "redirect:/";
-    }
+    }*/
 }
