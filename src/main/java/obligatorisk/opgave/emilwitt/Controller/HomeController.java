@@ -22,9 +22,9 @@ public class HomeController {
     MovieService movieService;
 
     @GetMapping("/")
-    public String index() {
-       /* Optional<Movie> x = movieRepository.findById((long) 1);
-        System.out.println(x.get().getTitle());*/
+    public String index(Model model) {
+        Iterable<Movie> movieList = movieRepository.findAll();
+        model.addAttribute("movies", movieList);
         return "index";
     }
 
